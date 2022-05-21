@@ -1,6 +1,5 @@
-
 :root {
-  --MAIN-BG-CLR: #212121;
+  --MAIN-BG-CLR: #131313;
   --MAIN-TXT-CLR: #F6F6F6;
 }
 
@@ -10,29 +9,11 @@ body {
   color: var(--MAIN-TXT-CLR);
 }
 
-form {
+.watchlist-item {
+  display: flex;
+  align-items: center;
 }
 
-label, input {
-  display: block;
-}
-
-.form-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid #F6F6F6;
-  padding: 1rem;
-}
-
-.form-row {
-  margin: 1.5rem 0;
-}
-
-@media (min-width: 1024px) {
-  .form-container {
-    padding: 5rem;
-    font-size: 16pt;
-  }
+.watchlist-item > div {
+  margin-right: 12px;
 }
