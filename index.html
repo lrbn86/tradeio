@@ -25,37 +25,39 @@
       <div>Graph Here</div>
       <p>Buying Power: $<span id="buying-power">400,000</span></p>
     </section>
-    <section id="stock-info-container">
+    <section id="display-container">
       <div id="watchlist">
         <h1>Watchlist</h1>
         <div class="watchlist-item">
           <div>
-            <p>AMZN</p>
-            <p><span>1.11</span> Shares</p>
+            <p class="stock-name">AMZN</p>
+            <p class="stock-shares">1.11 Shares</p>
           </div>
           <div>
-            <p>$2,157.00</p>
-            <p>+0.49%</p>
+            <p class="stock-price">2,157.00</p>
+            <p class="stock-percent">+0.49%</p>
           </div>
         </div>
         <div class="watchlist-item">
           <div>
-            <p>NFLX</p>
-            <p><span>0</span> Shares</p>
+            <p class="stock-name">NFLX</p>
+            <p class="stock-shares">0 Shares</p>
           </div>
           <div>
-            <p>$186.50</p>
-            <p>+1.65%</p>
+            <p class="stock-price">186.50</p>
+            <p class="stock-percent">+1.65%</p>
           </div>
         </div>
       </div>
-      <div id="stock-info">
+      <div id="stock-info-container">
         <button id="back-btn">&larr;</button>
-        <h1>Stock Name</h1>
-        <p>Stock Price</p>
-        <p>Stock Percentage</p>
-        <p>Stock Shares</p>
-        <input type="number">
+        <div class="stock-info">
+          <h1 id="stock-name">Stock Name</h1>
+          <p id="stock-price">Stock Price</p>
+          <p id="stock-percent">Stock Percentage</p>
+          <p id="stock-shares">Stock Shares</p>
+        </div>
+        <input id="num-shares-input"  type="number" placeholder="Enter # shares">
         <button id="buy-btn">BUY</button>
         <button id="sell-btn">SELL</button>
       </div>
