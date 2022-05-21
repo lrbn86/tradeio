@@ -1,54 +1,19 @@
-let portfolioValue = 400000;
-let buyingPower = 400000;
+import { User } from './user.js';
+import { Stock } from './stock.js';
+import { StocksDatabase } from './stocks-database.js';
+import { Display } from './display.js';
 
-const portfolioValueDisplay = document.querySelector('#portfolio-value');
-const buyingPowerDisplay = document.querySelector('#buying-power');
-const watchlistContainer = document.querySelector('#watchlist');
-const displayContainer = document.querySelector('#display-container');
-const stockInfoContainer = document.querySelector('#stock-info-container');
+const stocksDatabase = new StocksDatabase();
+const user = new User();
 
-stockInfoContainer.style.display = "none";
+user.watchlist.push(new Stock('AMZN', stocksDatabase.list['AMZN']));
+user.watchlist.push(new Stock('TSLA', stocksDatabase.list['TSLA']));
+user.watchlist.push(new Stock('MSFT', stocksDatabase.list['MSFT']));
+user.watchlist.push(new Stock('NFLX', stocksDatabase.list['NFLX']));
 
-document.addEventListener('click', (event) => {
+stocksDatabase.list['NFLX'] -= 5;
 
-  const watchListItem = event.target.closest('.watchlist-item');
-  const backBtn = event.target.closest('#back-btn');
-  const buyBtn = event.target.closest('#buy-btn');
-  const sellBtn = event.target.closest('#sell-btn');
-
-  if (watchListItem) {
-    const stockObj = {
-      "stockName": watchListItem.querySelector('.stock-name').textContent,
-      "stockPrice": watchListItem.querySelector('.stock-price').textContent,
-      "stockPriceDeltaPercentage": watchListItem.querySelector('.stock-percent').textContent,
-      "stockShares": watchListItem.querySelector('.stock-shares').textContent
-    };
-
-    document.querySelector('#stock-name').textContent = stockObj.stockName;
-    document.querySelector('#stock-price').textContent = stockObj.stockPrice;
-    document.querySelector('#stock-percent').textContent = stockObj.stockPriceDeltaPercentage;
-    document.querySelector('#stock-shares').textContent = stockObj.stockShares;
-
-    stockInfoContainer.style.display = "block";
-    watchlistContainer.style.display = "none";
-
-  }
-
-  if (backBtn) {
-    watchlistContainer.style.display = "block";
-    stockInfoContainer.style.display = "none";
-  }
-
-  if (buyBtn) {
-    let stockPrice = document.querySelector('#stock-price');
-    portfolioValueDisplay.textContent = stockPrice.textContent;
-  }
-
-  if (sellBtn) {
-    let stockPrice = document.querySelector('#stock-price');
-  }
-
-
-});
-
-
+const UI = new Display();
+UI.renderBuyingPower(user);
+UI.renderPortfolioValue(user);
+UI.renderWatchlist(user);

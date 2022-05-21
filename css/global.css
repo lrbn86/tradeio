@@ -8,12 +8,3 @@ body {
   background-color: var(--MAIN-BG-CLR);
   color: var(--MAIN-TXT-CLR);
 }
-
-.watchlist-item {
-  display: flex;
-  align-items: center;
-}
-
-.watchlist-item > div {
-  margin-right: 12px;
-}
