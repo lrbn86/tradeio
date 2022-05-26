@@ -7,8 +7,7 @@ https://tradeo.netlify.app/
 ## Development
 Run in terminal:
 ```
-git clone https://github.com/lrbn86/tradeio.git
-npm install
+git clone https://github.com/lrbn86/tradeio.git && cd tradeio && npm install
 ```
 
 In the project directory, you can run:
