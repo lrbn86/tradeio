@@ -2,24 +2,26 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const randomData = { "id": 10, "title": "json-server 10", "author": "typicode" };
+
+  const URL = 'http://localhost:3000/posts';
+
+  function handleClick() {
+    fetch(URL)
+      .then(res => res.json())
+      .then (data => console.log(data));
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button onClick={handleClick}>POST</button>
       </header>
     </div>
   );
+
 }
 
 export default App;
