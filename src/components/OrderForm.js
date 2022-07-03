@@ -62,6 +62,7 @@ export function OrderForm(props) {
       </div>
       <div className="form-group">
         <span>Estimated Cost</span>
+        {/* This should not be in the final implementation. The estimated cost will actually be provided by the backend, not through client side calculation. */}
         <span>${ orderFormState["order-type"] === 'limit-order' ? orderFormState["limit-price"] * orderFormState["shares-amount"] : props.price * orderFormState["shares-amount"] }</span>
       </div>
       <div className="form-group form-submit">
