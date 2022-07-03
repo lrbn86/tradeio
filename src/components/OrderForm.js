@@ -7,7 +7,7 @@ export function OrderForm(props) {
   const [orderFormState, setOrderFormState] = useState({
     "side": 'buy',
     "order-type": 'market-order',
-    'limit-price': 0,
+    'limit-price': '',
     "shares-amount": 0,
   });
 
@@ -52,7 +52,7 @@ export function OrderForm(props) {
         (
         <div className="form-group">
           <label htmlFor="limit-price">Limit Price</label>
-          <input className="order-input" name="limit-price" id="limit-price" type="text" placeholder="$0.00" required autoComplete='off'/>
+          <input className="order-input" name="limit-price" id="limit-price" type="text" placeholder="$0.00" defaultValue={orderFormState["limit-price"]} required autoComplete='off'/>
         </div>
         )
       }
