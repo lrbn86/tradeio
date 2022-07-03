@@ -1,0 +1,12 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 1em;
+}
+
+.order-input {
+  text-align: right;
+}
