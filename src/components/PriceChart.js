@@ -1,12 +1,10 @@
-import './PriceChart.css';
-
 export function PriceChart(props) {
 
   return (
     <div className="price-chart">
       <h1>Ticker Symbol</h1>
       <h2>${props.price.toFixed(2)}</h2>
-      <div class="chart">
+      <div className="chart">
         CHART PLACEHOLDER
       </div>
       {

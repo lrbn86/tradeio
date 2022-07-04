@@ -1,5 +1,3 @@
-import './OrderForm.css';
-
 import { useState } from 'react';
 
 export function OrderForm(props) {
@@ -29,7 +27,7 @@ export function OrderForm(props) {
   }
 
   return (
-    <form action="" onSubmit={handleFormSubmitEvent} onChange={handleFormChangeEvent}>
+    <form className="order-form" action="" onSubmit={handleFormSubmitEvent} onChange={handleFormChangeEvent}>
       <div className="form-group">
         <div>
           <input type="radio" name="side" id="buy" value="buy" defaultChecked />
@@ -62,11 +60,10 @@ export function OrderForm(props) {
       </div>
       <div className="form-group">
         <span>Estimated Cost</span>
-        {/* This should not be in the final implementation. The estimated cost will actually be provided by the backend, not through client side calculation. */}
-        <span>${ orderFormState["order-type"] === 'limit-order' ? orderFormState["limit-price"] * orderFormState["shares-amount"] : props.price * orderFormState["shares-amount"] }</span>
+        <span>$10</span>
       </div>
-      <div className="form-group form-submit">
-        <button className={`submit ${ orderFormState["side"] === 'buy' ? 'submit-buy' : 'submit-sell'}`}>{orderFormState["side"].toUpperCase()}</button>
+      <div className="form-group form-submit-button">
+        <button className={`submit ${ orderFormState["side"] === 'buy' ? 'green-button' : 'red-button'}`}>{orderFormState["side"].toUpperCase()}</button>
       </div>
       <div className="buying-power-info">
         $<span>3.35</span> buying power available

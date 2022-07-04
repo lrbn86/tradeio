@@ -1,5 +1,3 @@
-import './Watchlist.css';
-
 export function Watchlist(props) {
   return (
     <div className="watchlist">
