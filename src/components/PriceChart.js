@@ -6,7 +6,7 @@ export function PriceChart(props) {
     <div className="price-chart">
       <h1>Ticker Symbol</h1>
       <h2>${props.price.toFixed(2)}</h2>
-      <div>
+      <div class="chart">
         CHART PLACEHOLDER
       </div>
       {
@@ -14,16 +14,32 @@ export function PriceChart(props) {
         (
           <div className="holding-info">
             <div className="market-value">
-              <p>Market Value</p>
-              <p>$100.00</p>
-              <p>Today's return $<span>10.00(0.01%)</span></p>
-              <p>Total return $<span>10.00(0.01%)</span></p>
+              <div>
+                <span>Market Value</span>
+                <span>$100.00</span>
+              </div>
+              <div>
+                <span>Today's return</span>
+                <span>10.00(0.01%)</span>
+              </div>
+              <div>
+                <span>Total return</span>
+                <span>20.00(0.31%)</span>
+              </div>
             </div>
             <div className="average-cost">
-              <p>Average Cost</p>
-              <p>$10000.00</p>
-              <p>Shares <span>{props.shares}</span></p>
-              <p>Portfolio diversity <span>36.86%</span></p>
+              <div>
+                <span>Average Cost</span>
+                <span>$10000.00</span>
+              </div>
+              <div>
+                <span>Shares</span>
+                <span>{ props.shares }</span>
+              </div>
+              <div>
+                <span>Portfolio diversity</span>
+                <span>36.86%</span>
+              </div>
             </div>
           </div>
         )
