@@ -29,16 +29,6 @@ export function OrderForm(props) {
   return (
     <form className="order-form" action="" onSubmit={handleFormSubmitEvent} onChange={handleFormChangeEvent}>
       <div className="form-group">
-        <div>
-          <input type="radio" name="side" id="buy" value="buy" defaultChecked />
-          <label htmlFor="buy">Buy</label>
-        </div>
-        <div>
-          <input type="radio" name="side" id="sell" value="sell" />
-          <label htmlFor="sell">Sell</label>
-        </div>
-      </div>
-      <div className="form-group">
         <label htmlFor="order-type">Order Type</label>
         <select name="order-type" id="order-type">
           <option value="market-order">Market Order</option>
@@ -63,7 +53,7 @@ export function OrderForm(props) {
         <span>$10</span>
       </div>
       <div className="form-group form-submit-button">
-        <button className={`submit ${ orderFormState["side"] === 'buy' ? 'green-button' : 'red-button'}`}>{orderFormState["side"].toUpperCase()}</button>
+        <button className="submit-button">REVIEW ORDER</button>
       </div>
       <div className="buying-power-info">
         $<span>3.35</span> buying power available
